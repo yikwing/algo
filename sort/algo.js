@@ -9,13 +9,13 @@
       d.conf = {
         type: {
           list: [
-            /*{name: '选择排序（完全随机）', cons: SelectionSort},
+            {name: '选择排序（完全随机）', cons: SelectionSort},
             // {name: '选择排序（几乎有序）', cons: SelectionSort},
             // {name: '选择排序（大量重复元素）', cons: SelectionSort},
 
             {name: '插入排序（完全随机）', cons: InsertionSort},
             // {name: '插入排序（几乎有序）', cons: InsertionSort},
-            // {name: '插入排序（大量重复元素）', cons: InsertionSort},*/
+            // {name: '插入排序（大量重复元素）', cons: InsertionSort},
 
             {name: '归并排序（完全随机）', cons: MergeSort},
             {name: '归并排序（几乎有序）', cons: MergeSort},
