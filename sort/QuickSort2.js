@@ -1,0 +1,1 @@
+class QuickSort2 extends QuickSort {}
