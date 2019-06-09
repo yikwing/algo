@@ -260,6 +260,7 @@ class Tree extends Common {
     }
 
     ;[d.root, d.root2].forEach((rootNode, idx, arr) => {
+      if (!rootNode) return
       setPos(rootNode)
       d.iLeft += idx === arr.length - 1 ? itemWidth / 2 : itemWidth
     })

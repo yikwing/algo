@@ -6,7 +6,7 @@ class AVLTree extends Tree {
 
     d.levelHeight = 60
     d.paddingTop = 60
-    d.itemWidth = 44
+    d.itemWidth = 50
   }
   create() {
     const d = this.d
