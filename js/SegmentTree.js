@@ -4,7 +4,7 @@ class SegmentTree extends Heap {
 
     const d = this.d
 
-    d.len = 6
+    d.len = 10
     d.level = Math.ceil(Math.log(d.len) / Math.log(2)) + 1
     d.itemWidth = 40
     d.arr = new Array(Math.pow(2, d.level) - 1).fill().map(_ => new Node(null))

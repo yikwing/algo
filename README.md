@@ -7,10 +7,4 @@
 [《玩转算法与数据结构》](https://coding.imooc.com/learn/list/71.html)
 [《算法大神带你玩转数据结构 从入门到精通》](https://coding.imooc.com/learn/list/207.html)
 
-### Trie 可视化
-
-![Trie 可视化](./trie.png)
-
-### 红黑树 可视化
-
-![红黑树 可视化](./rbTree.png)
+![算法可视化](./all.png)

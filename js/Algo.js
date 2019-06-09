@@ -47,7 +47,7 @@ class Algo {
             <button class="btn btn-primary">${v.name}</button>
           </div>
           <div class="box-canvas">
-            <canvas></canvas>
+            <canvas title="${v.name}"></canvas>
           </div>
         </section>
       `
