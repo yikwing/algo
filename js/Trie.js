@@ -2,10 +2,11 @@ class Trie extends Common {
   constructor() {
     super(...arguments)
 
-    const d = this.d
+    const me = this
+    const d = me.d
 
     // d.str = 'cat dog deer panda pan'
-    d.str = `SwiftUI provides views, controls, and layout structures for declaring your app's user interface. The framework provides event handlers for delivering taps, gestures cat dog deer pan panda`
+    d.str = `SwiftUI provides views, controls, and layout structures for declaring your app's user interface. The framework, gestures cat dog deer pan panda`
     // d.str = `Create your own custom views that conform to the View protocol, and compose them with SwiftUI views for displaying text, images, and custom shapes using stacks, lists, and more. Apply powerful modifiers to built-in views and your own views to customize their rendering and interactivity. Share code between apps on multiple platforms with views and controls that adapt to their context and presentation.`
     d.arr = d.str.toLowerCase().match(/\w+/g) || []
     d.root = {
@@ -16,7 +17,8 @@ class Trie extends Common {
     }
   }
   create() {
-    const d = this.d
+    const me = this
+    const d = me.d
 
     d.arr.forEach((str, idx, arr) => {
       let curNode = d.root
