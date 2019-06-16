@@ -6,9 +6,19 @@ class Algo {
 
     d.type = {
       list: [
-        {name: '迷宫问题 - 广度优先', cons: Maze, startFn: 'nfs'},
-        {name: '迷宫问题 - 深度优先 - 非递归', cons: Maze, startFn: 'dfs2'},
-        {name: '迷宫问题 - 深度优先 - 递归', cons: Maze, startFn: 'dfs1'},
+        {name: '分形图 - FractalTree', cons: FractalTree, startFn: 'create'},
+        {name: '分形图 - KoachSnowflake', cons: KoachSnowflake, startFn: 'create'},
+        {name: '分形图 - SierpinskiTriangle', cons: SierpinskiTriangle, startFn: 'create'},
+        {name: '分形图 - Sierpinski', cons: Sierpinski, startFn: 'create'},
+        {name: '分形图 - Vicsek', cons: Vicsek, startFn: 'create'},
+        // {name: '迷宫创建 - 随机队列 - 2', cons: Maze, startFn: 'generateRandomQueue2'},
+        // {name: '迷宫创建 - 随机队列 - 1', cons: Maze, startFn: 'generateRandomQueue1'},
+        // {name: '迷宫创建 - 广度优先', cons: Maze, startFn: 'generate3'},
+        // {name: '迷宫创建 - 深度优先 - 非递归', cons: Maze, startFn: 'generate2'},
+        // {name: '迷宫创建 - 深度优先 - 递归', cons: Maze, startFn: 'generate1'},
+        // {name: '迷宫遍历 - 广度优先', cons: Maze, startFn: 'bfs'},
+        // {name: '迷宫遍历 - 深度优先 - 非递归', cons: Maze, startFn: 'dfs2'},
+        // {name: '迷宫遍历 - 深度优先 - 递归', cons: Maze, startFn: 'dfs1'},
         {name: 'Trie', cons: Trie, startFn: 'create'},
         {name: '红黑树 (左倾 & 右倾)', cons: RBTree, startFn: 'create'},
         {name: 'AVL树', cons: AVLTree, startFn: 'create'},
@@ -40,7 +50,7 @@ class Algo {
       fontSm: '12px Arial',
       fontLg: '16px Arial',
       devicePixelRatio: devicePixelRatio < 2 ? 2 : devicePixelRatio,
-      devicePixelRatio: devicePixelRatio,
+      devicePixelRatio,
     }
 
     const nodeList = document.querySelector('#box-algo > .list')
@@ -58,8 +68,8 @@ class Algo {
       `
     }).join('')
 
-    const len = 20
-    let randArr = [].rnd(len, 1, 4)
+    const len = 24
+    let randArr = [].rnd(len, 1)
 
     // randArr = new Array(len).fill().map((_, idx) => len - idx)
     // randArr = new Array(len).fill().map((_, idx) => idx)
@@ -67,8 +77,9 @@ class Algo {
 
     randArr = randArr.map(n => new Node(n))
     
-    nodeList.querySelectorAll('canvas').forEach((canvas, idx, arr) => {
+    nodeList.querySelectorAll('canvas').forEach(async (canvas, idx, arr) => {
       const type = d.type.list[idx]
+
       const o = new type.cons({
         canvas,
         gd: canvas.getContext('2d'),
@@ -76,12 +87,13 @@ class Algo {
         btn: canvas.closest('section').querySelector('.btn'),
         algo: this,
         ...d,
+        type,
       })
 
       d.cons.list.push(o)
       o[type.startFn]()
       o.setPos()
-      o.render()
+      ;![Maze].some(cons => type.cons === cons) && o.render()
     })
   }
 }
